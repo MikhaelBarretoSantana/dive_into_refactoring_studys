@@ -1,0 +1,29 @@
+package separate_query_from_modifier;
+
+public class OldMain {
+    
+}
+
+class Guard {
+
+    public void checkSecurity(String[] people) {
+        String found = findCriminalAndAlert(people);
+        someLaterCode(found);
+    }
+
+    public String findCriminalAndAlert(String[] people) {
+        for (int i = 0; i < people.length; i++) {
+            if (people[i].equals("Don")) {
+                sendAlert();
+                return  "Don";
+            }
+
+            if (people[i].equals("John")) {
+                sendAlert();
+                return "John";
+            }
+        }
+
+        return "";
+    }
+}
